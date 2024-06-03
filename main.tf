@@ -13,16 +13,16 @@ provider "docker" {
   host = "unix:///run/user/1000/podman/podman.sock"
 }
 
-resource "docker_image" "nginx" {
-  name         = "nginx:latest"
+resource "docker_image" "openvino_notebooks" {
+  name         = "mwrightpivotal/openvino_notebooks:3.2"
   keep_locally = false
 }
 
-resource "docker_container" "nginx" {
+resource "docker_container" "openvino_notebooks" {
   image = docker_image.nginx.name
-  name  = "nginx"
+  name  = "openvino_notebooks"
   ports {
-    internal = 80
+    internal = 8888
     external = 8000
   }
 }
