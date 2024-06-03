@@ -19,7 +19,7 @@ resource "docker_image" "openvino_notebooks" {
 }
 
 resource "docker_container" "openvino_notebooks" {
-  image = docker_image.nginx.name
+  image = docker_image.openvino_notebooks.name
   name  = "openvino_notebooks"
   ports {
     internal = 8888
