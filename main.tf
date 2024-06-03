@@ -9,7 +9,9 @@ terraform {
   }
 }
 
-provider "docker" {}
+provider "docker" {
+  host = "unix:///run/user/1000/podman/podman.sock"
+}
 
 resource "docker_image" "nginx" {
   name         = "nginx:latest"
