@@ -1,12 +1,3 @@
-terraform {
-  required_version = ">= 0.13"
-    required_providers {
-      libvirt = {
-        source  = "dmacvicar/libvirt"
-      }
-    }
-}
-
 resource "tls_private_key" "ecdsa-p384-bastion" {
   algorithm   = "ECDSA"
   ecdsa_curve = "P384"
