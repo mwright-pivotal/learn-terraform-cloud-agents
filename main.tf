@@ -18,3 +18,7 @@ provider "nomad" {
   region  = "edge"
 }
 
+# Register a job
+resource "nomad_job" "monitoring" {
+  jobspec = file("${path.module}/openvino_job.hcl")
+}
