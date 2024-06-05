@@ -12,7 +12,7 @@ terraform {
   }
 }
 
-provider "docker" {
+provider "podman" {
   host = "unix:///run/user/1000/podman/podman.sock"
 }
 
