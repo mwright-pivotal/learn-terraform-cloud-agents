@@ -4,7 +4,7 @@ provider "libvirt" {
 }
 
 resource "libvirt_pool" "ubuntu" {
-  name = "ubuntu"
+  name = "virtimages"
   type = "dir"
   path = "/tmp/terraform-provider-libvirt-pool-ubuntu"
 }
