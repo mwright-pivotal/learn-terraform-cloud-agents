@@ -3,7 +3,7 @@ job "openvino" {
 
   type = "service"
 
-  group "openvino_notebooks" {
+  group "openvino-notebooks" {
     count = 1
 
     network {
@@ -13,7 +13,7 @@ job "openvino" {
     }
 
     service {
-      name = "openvino_notebooks"
+      name = "openvino-notebooks"
       port = "http"
       provider = "nomad"
 
