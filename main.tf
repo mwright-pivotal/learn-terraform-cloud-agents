@@ -19,6 +19,6 @@ provider "nomad" {
 }
 
 # Register a job
-resource "nomad_job" "openvino_notebooks" {
+resource "nomad_job" "openvino-notebooks" {
   jobspec = file("${path.module}/openvino_job.hcl")
 }
