@@ -15,7 +15,7 @@ terraform {
 
 provider "nomad" {
   address = "http://192.168.0.249:4646"
-  region  = "edge"
+  region  = "global"
 }
 
 # Register a job
