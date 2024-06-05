@@ -3,8 +3,9 @@
 
 terraform {
   required_providers {
-    docker = {
-      source = "kreuzwerker/docker"
+    nomad = {
+      source = "hashicorp/nomad"
+      version = "2.3.0"
     }
     libvirt = {
       source  = "dmacvicar/libvirt"
@@ -12,20 +13,8 @@ terraform {
   }
 }
 
-provider "docker" {
-  host = "unix:///run/user/1000/podman/podman.sock"
+provider "nomad" {
+  address = "http://192.168.0.249:4646"
+  region  = "edge"
 }
 
-resource "docker_image" "openvino_notebooks" {
-  name         = "mwrightpivotal/openvino_notebooks:3.2"
-  keep_locally = false
-}
-
-resource "docker_container" "openvino_notebooks" {
-  image = docker_image.openvino_notebooks.name
-  name  = "openvino_notebooks"
-  ports {
-    internal = 8888
-    external = 8000
-  }
-}
