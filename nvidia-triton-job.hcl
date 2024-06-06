@@ -65,7 +65,7 @@ job "tritonserver" {
         cpu    = 2000
         memory = 16484
         
-        device "nvidia.com/gpu" {
+        device "nvidia/gpu" {
           count = 1
         }
       }
