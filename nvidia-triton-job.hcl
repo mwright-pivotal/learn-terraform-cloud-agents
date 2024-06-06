@@ -25,7 +25,7 @@ job "tritonserver" {
 
       tags = [
         "traefik.enable=true",
-        "traefik.http.routers.http.rule=Path(`/triton`)",
+        "traefik.http.routers.tritonserver.rule=Path(`/triton`)",
       ]
 
       check {
