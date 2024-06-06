@@ -15,12 +15,19 @@ job "openvino" {
     service {
       name = "openvino-notebooks"
       port = "http"
-      provider = "nomad"
+      provider = "consul"
 
       tags = [
         "traefik.enable=true",
-        "traefik.http.routers.http.rule=Path(`/ov`)",
+        "traefik.http.routers.http.rule=Path(`/openvino`)",
       ]
+
+      check {
+        type     = "http"
+        path     = "/lab"
+        interval = "2s"
+        timeout  = "2s"
+      }
     }
 
     task "server" {
