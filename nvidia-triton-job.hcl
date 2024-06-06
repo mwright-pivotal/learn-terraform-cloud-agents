@@ -55,7 +55,8 @@ job "tritonserver" {
           "local/.:/models:ro,noexec"
         ]
         args = [
-          "--model-repository=/models"
+          "--model-repository=/models",
+          "--allow-http=true"
         ]
         privileged = true
       }
@@ -64,7 +65,7 @@ job "tritonserver" {
         cpu    = 2000
         memory = 16484
         
-        device "nvidia/gpu" {
+        device "nvidia.com/gpu=all" {
           count = 1
         }
       }
