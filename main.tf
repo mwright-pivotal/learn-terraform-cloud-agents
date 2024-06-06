@@ -22,3 +22,7 @@ provider "nomad" {
 resource "nomad_job" "openvino-notebooks" {
   jobspec = file("${path.module}/openvino_job.hcl")
 }
+# Register a job
+resource "nomad_job" "nvidia-triton" {
+  jobspec = file("${path.module}/nvidia-triton-job.hcl")
+}
