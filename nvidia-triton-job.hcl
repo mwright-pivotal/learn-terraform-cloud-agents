@@ -30,7 +30,7 @@ job "tritonserver" {
 
       check {
         type     = "http"
-        path     = "/triton"
+        path     = "/v2/health/ready"
         interval = "2s"
         timeout  = "2s"
       }
