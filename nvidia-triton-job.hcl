@@ -51,7 +51,6 @@ job "tritonserver" {
         ports = ["http","metrics","grpc"]
         shm_size = "1024g"
         command = "tritonserver"
-        privileged = "true"
         volumes = [
           "local/.:/models:ro,noexec"
         ]
