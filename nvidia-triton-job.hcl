@@ -21,7 +21,7 @@ job "tritonserver" {
     service {
       name = "tritonserver"
       port = "http"
-      provider = "nomad"
+      provider = "consul"
 
       tags = [
         "traefik.enable=true",
