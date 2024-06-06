@@ -57,7 +57,8 @@ job "tritonserver" {
         ]
         args = [
           "--model-repository=/models",
-          "--allow-http=true"
+          "--allow-http=true",
+          "--log-verbose=9"
         ]
         privileged = true
       }
