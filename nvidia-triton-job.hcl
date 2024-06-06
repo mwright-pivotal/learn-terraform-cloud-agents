@@ -25,8 +25,15 @@ job "tritonserver" {
 
       tags = [
         "traefik.enable=true",
-        "traefik.http.routers.http.rule=Path(`/`)",
+        "traefik.http.routers.http.rule=Path(`/triton`)",
       ]
+
+      check {
+        type     = "http"
+        path     = "/"
+        interval = "2s"
+        timeout  = "2s"
+      }
     }
 
     task "server" {
@@ -44,6 +51,7 @@ job "tritonserver" {
         ports = ["http","metrics","grpc"]
         shm_size = "1024g"
         command = "tritonserver"
+        privileged = "true"
         volumes = [
           "local/.:/models:ro,noexec"
         ]
