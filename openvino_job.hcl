@@ -19,7 +19,7 @@ job "openvino" {
 
       tags = [
         "traefik.enable=true",
-        "traefik.http.routers.http.rule=Path(`/openvino`)",
+        "traefik.http.routers.openvino-notebooks.rule=Path(`/openvino`)",
       ]
 
       check {
