@@ -61,7 +61,7 @@ job "tritonserver" {
           "--allow-http=true",
           "--log-verbose=9"
         ]
-        privileged = true
+        #privileged = true
       }
       resources {
         
