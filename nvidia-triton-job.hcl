@@ -51,7 +51,7 @@ job "tritonserver" {
       config {
         image = "nvcr.io/nvidia/tritonserver:24.05-py3"
         ports = ["http","metrics","grpc"]
-        shm_size = "1024g"
+        shm_size = 1024
         command = "tritonserver"
         volumes = [
           "local/.:/models:ro,noexec"
