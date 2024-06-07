@@ -46,7 +46,7 @@ job "tritonserver" {
         JUPYTER_PORT = "${NOMAD_PORT_http}"
       }
    
-      driver = "podman"
+      driver = "docker"
 
       config {
         image = "nvcr.io/nvidia/tritonserver:24.05-py3"
