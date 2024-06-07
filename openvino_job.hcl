@@ -35,7 +35,7 @@ job "openvino" {
         JUPYTER_PORT = "${NOMAD_PORT_http}"
       }
    
-      driver = "podman"
+      driver = "docker"
 
       config {
         image = "mwrightpivotal/openvino_notebooks:3.2"
