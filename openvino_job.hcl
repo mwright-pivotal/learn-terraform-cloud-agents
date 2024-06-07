@@ -40,7 +40,7 @@ job "openvino" {
       config {
         image = "mwrightpivotal/openvino_notebooks:3.2"
         ports = ["http"]
-        shm_size = "1024g"
+        shm_size = 1024
       }
       resources {
         
