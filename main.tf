@@ -14,7 +14,7 @@ terraform {
 }
 
 provider "nomad" {
-  address = "http://192.168.0.250:4646,http://192.168.0.249:4646"
+  address = "http://192.168.0.250:4646"
   region  = "global"
 }
 
