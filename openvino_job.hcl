@@ -19,9 +19,7 @@ job "openvino" {
 
       tags = [
         "traefik.enable=true",
-        "traefik.http.routers.openvino.rule=PathPrefix(`/openvino`)",
-        "traefik.http.middlewares.ov-stripprefix.stripprefix.prefixes=/openvino",
-        "traefik.http.routers.openvino.middlewares=ov-stripprefix"
+        "traefik.http.routers.openvino.rule=PathPrefix(`/openvino`)"
       ]
 
       check {
