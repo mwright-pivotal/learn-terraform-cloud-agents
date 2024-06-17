@@ -17,7 +17,10 @@ provider "nomad" {
   address = "http://192.168.0.250:4646"
   region  = "global"
 }
-
+# Register a job
+resource "traefik_job" "traefik" {
+  jobspec = file("${path.module}/traefik_job.hcl")
+}
 # Register a job
 resource "nomad_job" "openvino-notebooks" {
   jobspec = file("${path.module}/openvino_job.hcl")
