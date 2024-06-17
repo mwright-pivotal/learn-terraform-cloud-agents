@@ -35,6 +35,7 @@ job "openvino" {
     task "server" {
       env {
         JUPYTER_PORT = "${NOMAD_PORT_http}"
+        JUPYTERHUB_SERVICE_PREFIX = "/openvino"
       }
    
       driver = "docker"
