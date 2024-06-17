@@ -18,8 +18,8 @@ provider "nomad" {
   region  = "global"
 }
 # Register a job
-resource "traefik_job" "traefik" {
-  jobspec = file("${path.module}/traefik_job.hcl")
+resource "nomad_job" "traefik" {
+  jobspec = file("${path.module}/traefik-job.hcl")
 }
 # Register a job
 resource "nomad_job" "openvino-notebooks" {
