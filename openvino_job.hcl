@@ -46,11 +46,12 @@ job "openvino" {
         ports = ["http"]
         shm_size = 1024
         command = "jupyter"
-        args {
-          "lab"
-          "--NotebookApp.base_url=/openvino"
-          "--ip=*"
+        args = [
+          "lab",
+          "--NotebookApp.base_url=/openvino",
+          "--ip=*",
           "--allow-root"
+        ]
       }
       resources {
         
