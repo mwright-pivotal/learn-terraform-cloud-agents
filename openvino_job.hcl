@@ -20,8 +20,8 @@ job "openvino" {
       tags = [
         "traefik.enable=true",
         "traefik.http.routers.tritonserver.rule=PathPrefix(`/openvino`)",
-        "traefik.http.middlewares.test-stripprefix.stripprefix.prefixes=/openvino",
-        "traefik.http.routers.tritonserver.middlewares=test-stripprefix"
+        "traefik.http.middlewares.ov-stripprefix.stripprefix.prefixes=/openvino",
+        "traefik.http.routers.tritonserver.middlewares=ov-stripprefix"
       ]
 
       check {
