@@ -54,7 +54,7 @@ job "tritonserver" {
         shm_size = 1024
         command = "tritonserver"
         volumes = [
-          "local/.:/models:ro,noexec"
+          "local/.:/models"
         ]
         args = [
           "--model-repository=/models",
