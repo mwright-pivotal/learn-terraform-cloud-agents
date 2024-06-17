@@ -39,6 +39,7 @@ job "openvino" {
 
       config {
         image = "mwrightpivotal/openvino_notebooks:3.2"
+        image_pull_timeout = "10m"
         ports = ["http"]
         shm_size = 1024
       }
