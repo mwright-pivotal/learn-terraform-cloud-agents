@@ -48,7 +48,8 @@ job "openvino" {
           "lab",
           "--NotebookApp.base_url=/openvino",
           "--ip=*",
-          "--allow-root"
+          "--allow-root",
+          "/opt/app-root/notebooks"
         ]
       }
       resources {
