@@ -19,12 +19,14 @@ job "openvino" {
 
       tags = [
         "traefik.enable=true",
-        "traefik.http.routers.openvino-notebooks.rule=Path(`/openvino`)",
+        "traefik.http.routers.tritonserver.rule=PathPrefix(`/openvino`)",
+        "traefik.http.middlewares.test-stripprefix.stripprefix.prefixes=/openvino",
+        "traefik.http.routers.tritonserver.middlewares=test-stripprefix"
       ]
 
       check {
         type     = "http"
-        path     = "/lab"
+        path     = "/api"
         interval = "2s"
         timeout  = "2s"
       }
