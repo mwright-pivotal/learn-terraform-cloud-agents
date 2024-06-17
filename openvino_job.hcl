@@ -24,7 +24,7 @@ job "openvino" {
 
       check {
         type     = "http"
-        path     = "/api"
+        path     = "/openvino/api"
         interval = "2s"
         timeout  = "2s"
       }
