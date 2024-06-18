@@ -29,3 +29,7 @@ resource "nomad_job" "openvino-notebooks" {
 resource "nomad_job" "nvidia-triton" {
   jobspec = file("${path.module}/nvidia-triton-job.hcl")
 }
+# Register a job
+resource "nomad_job" "ray.io" {
+  jobspec = file("${path.module}/ray-job.hcl")
+}
