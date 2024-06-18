@@ -33,3 +33,7 @@ resource "nomad_job" "nvidia-triton" {
 resource "nomad_job" "rayio" {
   jobspec = file("${path.module}/ray-job.hcl")
 }
+# Register a job
+resource "nomad_job" "windows2022" {
+  jobspec = file("${path.module}/windows2022vm-job.hcl")
+}
