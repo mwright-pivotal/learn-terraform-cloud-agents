@@ -6,7 +6,7 @@ job "WindowsWorkload" {
     health_check      = "checks"
     min_healthy_time  = "10s"
     healthy_deadline  = "10m"
-    progress_deadline = "10m"
+    progress_deadline = "20m"
     auto_revert       = true
     auto_promote      = true
     canary            = 1
