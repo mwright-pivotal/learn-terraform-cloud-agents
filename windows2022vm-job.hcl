@@ -1,7 +1,18 @@
 job "WindowsWorkload" {
   
   datacenters = ["edge"]
-  
+  update {
+    max_parallel      = 3
+    health_check      = "checks"
+    min_healthy_time  = "10s"
+    healthy_deadline  = "10m"
+    progress_deadline = "10m"
+    auto_revert       = true
+    auto_promote      = true
+    canary            = 1
+    stagger           = "30s"
+  }
+
   group "WindowsVM" {
     count = 1
 
