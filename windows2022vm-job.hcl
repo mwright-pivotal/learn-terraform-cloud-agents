@@ -28,7 +28,7 @@ job "WindowsWorkload" {
       # Specifying an artifact is required with the "qemu"
       # driver. This is the # mechanism to ship the image to be run.
       artifact {
-        source = "http://192.168.0.78/win2k22.qcow2.tgz"
+        source = "http://192.168.0.35/win2k22.qcow2.tgz"
       }
     }
   }
