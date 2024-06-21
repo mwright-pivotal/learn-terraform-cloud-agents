@@ -40,7 +40,7 @@ job "tritonserver" {
 
     task "server" {
       artifact {
-        source = "http://192.168.0.78/models.tgz"
+        source = "http://192.168.0.35/models.tgz"
       }
       env {
         JUPYTER_PORT = "${NOMAD_PORT_http}"
