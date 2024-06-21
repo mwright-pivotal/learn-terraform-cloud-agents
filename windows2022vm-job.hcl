@@ -15,14 +15,18 @@ job "WindowsWorkload" {
 
   group "WindowsVM" {
     count = 1
-
+    network {
+      port "ssh" { }
+    }
     task "virtual" {
       driver = "qemu"
     
       config {
         image_path  = "local/win2k22.qcow2"
         accelerator = "kvm"
-        args        = ["-nodefaults", "-nodefconfig"]
+        port_map = {
+          ssh = 22
+        }
       }
     
       # Specifying an artifact is required with the "qemu"
