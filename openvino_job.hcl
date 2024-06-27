@@ -99,6 +99,8 @@ job "openvino" {
           "local/.:/models"
         ]
         args = [
+          "--model_path",
+          "/models",
           "--model_name",
           "densenet_onnx",
           "--log_level",
