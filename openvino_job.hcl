@@ -82,6 +82,12 @@ job "openvino" {
       }
     }
     task "openvino-model-server" {
+      affinity {
+        attribute = "${node.class}"
+        operator  = "="
+        value     = "intel-igpu"
+        weight    = 50
+      }
       artifact {
         source = "http://192.168.0.12/models.tgz"
       }
