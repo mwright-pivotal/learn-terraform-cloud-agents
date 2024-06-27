@@ -101,7 +101,8 @@ job "openvino" {
         args = [
           "--model_name",
           "densenet_onnx",
-          "--log_level DEBUG"
+          "--log_level".
+          "DEBUG"
         ]
         #privileged = true
       }
