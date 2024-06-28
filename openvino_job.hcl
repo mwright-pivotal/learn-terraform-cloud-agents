@@ -55,7 +55,7 @@ job "openvino" {
 
     task "jupyter" {
       env {
-        JUPYTER_PORT = "${NOMAD_PORT_http}"
+        JUPYTER_PORT = "${NOMAD_PORT_http_jupyter}"
         JUPYTERHUB_SERVICE_PREFIX = "/openvino"
       }
    
@@ -89,7 +89,7 @@ job "openvino" {
         weight    = 50
       }
       artifact {
-        source = "http://192.168.0.12/models.tgz"
+        source = "http://192.168.0.5/models.tgz"
       }
       env {
         JUPYTER_PORT = "${NOMAD_PORT_http}"
@@ -111,6 +111,12 @@ job "openvino" {
           "densenet_onnx",
           "--log_level",
           "DEBUG"
+        ]
+        devices = [
+          {
+            host_path = "/dev/dri"
+            container_path = "/dev/dri"
+          }
         ]
         #privileged = true
       }
