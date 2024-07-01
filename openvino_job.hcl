@@ -108,7 +108,7 @@ job "openvino" {
           "--model_path",
           "/models",
           "--model_name",
-          "densenet_onnx",
+          "densenet_onnx1",
           "--log_level",
           "DEBUG"
         ]
