@@ -110,7 +110,6 @@ job "openvino" {
         devices = [
           {
             host_path = "/dev/dri"
-            container_path = "/dev/dri"
           }
         ]
         privileged = true
