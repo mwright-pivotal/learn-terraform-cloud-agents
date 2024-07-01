@@ -113,7 +113,7 @@ job "openvino" {
           }
         ]
         privileged = true
-        group-add = [
+        group_add = [
           "109"
         ]
       }
