@@ -98,7 +98,7 @@ job "openvino" {
       driver = "docker"
 
       config {
-        image = "openvino/model_server:latest"
+        image = "openvino/model_server:latest-gpu"
         ports = ["http_models"]
         shm_size = 1024
         volumes = [
