@@ -86,7 +86,7 @@ job "openvino" {
         attribute = "${node.class}"
         operator  = "="
         value     = "intel-igpu"
-        weight    = 50
+        weight    = 100
       }
       artifact {
         source = "http://192.168.0.5/models.tgz"
