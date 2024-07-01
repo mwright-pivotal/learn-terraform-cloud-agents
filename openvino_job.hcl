@@ -110,7 +110,9 @@ job "openvino" {
           "--model_name",
           "quantized_cards_detect-1023",
           "--log_level",
-          "INFO"
+          "INFO",
+          "--target_device",
+          "GPU"
         ]
         devices = [
           {
