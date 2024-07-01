@@ -75,11 +75,6 @@ job "openvino" {
           "/opt/app-root/notebooks"
         ]
       }
-      resources {
-        
-        cpu    = 2000
-        memory = 16484
-      }
     }
     task "openvino-model-server" {
       constraint {
@@ -122,8 +117,8 @@ job "openvino" {
       }
       resources {
         
-        cpu    = 2000
-        memory = 16484
+        cpu    = 1000
+        memory = 8192
       }
     }
   }
