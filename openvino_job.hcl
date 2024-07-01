@@ -113,6 +113,9 @@ job "openvino" {
             container_path = "/dev/dri"
           }
         ]
+        group_add = [
+          "render"
+        ]
         #privileged = true
       }
       resources {
