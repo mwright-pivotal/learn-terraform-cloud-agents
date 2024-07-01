@@ -106,9 +106,9 @@ job "openvino" {
         ]
         args = [
           "--model_path",
-          "/models",
+          "/models/blackjack1",
           "--model_name",
-          "densenet_onnx1",
+          "quantized_cards_detect-1023",
           "--log_level",
           "DEBUG"
         ]
