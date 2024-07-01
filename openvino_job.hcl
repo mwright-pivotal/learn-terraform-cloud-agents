@@ -113,6 +113,9 @@ job "openvino" {
           }
         ]
         privileged = true
+        group-add = [
+          "109"
+        ]
       }
       resources {
         
