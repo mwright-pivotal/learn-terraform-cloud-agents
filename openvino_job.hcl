@@ -110,7 +110,7 @@ job "openvino" {
           "--model_name",
           "quantized_cards_detect-1023",
           "--log_level",
-          "DEBUG"
+          "INFO"
         ]
         devices = [
           {
