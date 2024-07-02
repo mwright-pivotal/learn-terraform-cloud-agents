@@ -10,8 +10,11 @@ job "openvino" {
        port "http_jupyter" {
          to = 8888
        }
-       port "http_models" {
+       port "grpc_models" {
          to = 9000
+       }
+       port "http_models" {
+         to = 9001
        }
     }
 
@@ -47,7 +50,7 @@ job "openvino" {
 
       check {
         type     = "http"
-        path     = "/metrics"
+        path     = "/v2/health/ready"
         interval = "2s"
         timeout  = "2s"
       }
