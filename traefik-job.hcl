@@ -28,6 +28,22 @@ job "traefik" {
       }
     }
 
+    task "keepalived" {
+      driver = "docker"
+      env {
+        KEEPALIVED_VIRTUAL_IPS = "192.168.0.248/24"
+        KEEPALIVED_UNICAST_PEERS = ""
+        KEEPALIVED_STATE       = "MASTER"
+        KEEPALIVED_VIRTUAL_ROUTES = ""
+      }
+      config {
+        image        = "visibilityspots/keepalived:2.2.7"
+        network_mode = "host"
+        privileged   = true
+        cap_add      = ["NET_ADMIN", "NET_BROADCAST", "NET_RAW"]
+      }
+    }
+
     task "traefik" {
       driver = "docker"
 
