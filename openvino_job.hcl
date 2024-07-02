@@ -50,7 +50,7 @@ job "openvino" {
 
       check {
         type     = "http"
-        path     = "/v2/health/ready"
+        path     = "/ov/v2/health/ready"
         interval = "2s"
         timeout  = "2s"
       }
