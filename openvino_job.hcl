@@ -11,10 +11,10 @@ job "openvino" {
          to = 8888
        }
        port "grpc_models" {
-         to = 9000
+         to = 8080
        }
        port "http_models" {
-         to = 9001
+         to = 8081
        }
     }
 
