@@ -11,10 +11,10 @@ job "openvino" {
          to = 8888
        }
        port "grpc_models" {
-         to = 8080
+         to = 9000
        }
        port "http_models" {
-         to = 8081
+         to = 9001
        }
     }
 
@@ -108,7 +108,11 @@ job "openvino" {
           "--log_level",
           "INFO",
           "--target_device",
-          "GPU"
+          "GPU",
+          "--port",
+          "9000",
+          "--rest_port",
+          "9001"
         ]
         devices = [
           {
