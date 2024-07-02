@@ -31,7 +31,7 @@ job "openvino" {
       check {
         type     = "http"
         path     = "/openvino/api"
-        interval = "2s"
+        interval = "10s"
         timeout  = "2s"
       }
     }
@@ -51,7 +51,7 @@ job "openvino" {
       check {
         type     = "grpc"
         port     = "grpc_models"
-        interval = "2s"
+        interval = "10s"
         timeout  = "2s"
       }
     }
@@ -106,7 +106,7 @@ job "openvino" {
           "--model_name",
           "quantized_cards_detect-1023",
           "--log_level",
-          "INFO",
+          "DEBUG",
           "--target_device",
           "GPU",
           "--port",
