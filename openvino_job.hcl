@@ -49,8 +49,8 @@ job "openvino" {
       ]
 
       check {
-        type     = "http"
-        path     = "/ov/v2/health/ready"
+        type     = "tcp"
+        port     = "grpc_models"
         interval = "2s"
         timeout  = "2s"
       }
