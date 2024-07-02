@@ -38,7 +38,7 @@ job "openvino" {
 
     service {
       name = "openvino-model-server"
-      port = "http_models"
+      port = "grpc_models"
       provider = "consul"
 
       tags = [
@@ -49,7 +49,7 @@ job "openvino" {
       ]
 
       check {
-        type     = "tcp"
+        type     = "grpc"
         port     = "grpc_models"
         interval = "2s"
         timeout  = "2s"
