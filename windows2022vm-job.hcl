@@ -24,6 +24,8 @@ job "WindowsWorkload" {
       config {
         image_path  = "local/win2k22.qcow2"
         accelerator = "kvm"
+        drive_interface = "scsi"
+        args = ["-device","virtio-net-pci,netdev=user0"]
         port_map = {
           ssh = 22
         }
