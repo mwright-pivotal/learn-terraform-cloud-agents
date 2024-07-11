@@ -45,6 +45,10 @@ job "tritonserver" {
       env {
         JUPYTER_PORT = "${NOMAD_PORT_http}"
       }
+      constraint {
+        attribute = "${node.class}"
+        value     = "nvidia-gpu"
+      }
    
       driver = "docker"
 
