@@ -22,10 +22,10 @@ job "WindowsWorkload" {
       driver = "qemu"
     
       config {
-        image_path  = "local/win2k22.qcow2"
+        image_path  = "local/Win2022_20324.qcow2"
         accelerator = "kvm"
         drive_interface = "scsi"
-        args = ["-device","virtio-net-pci,netdev=user0"]
+        args = ["-device","virtio-net,netdev=user.0","-boot","once=d","-vnc","0.0.0.0:59"]
         port_map = {
           ssh = 22
         }
@@ -34,7 +34,7 @@ job "WindowsWorkload" {
       # Specifying an artifact is required with the "qemu"
       # driver. This is the # mechanism to ship the image to be run.
       artifact {
-        source = "http://192.168.0.5/win2k22.qcow2.tgz"
+        source = "http://192.168.0.5/Win2022_20324.qcow2.tgz"
       }
     }
   }
