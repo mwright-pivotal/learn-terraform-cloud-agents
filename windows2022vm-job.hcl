@@ -24,8 +24,7 @@ job "WindowsWorkload" {
       config {
         image_path  = "local/Win2022_20324.qcow2"
         accelerator = "kvm"
-        drive_interface = "virtio"
-        args = ["-device","virtio-net","-boot","once=d","-vnc","0.0.0.0:59"]
+        args = ["-netdev","user,id=user.0,hostfwd=tcp::2418-:5986","-device","virtio-scsi-pci,id=scsi0","-device","scsi-hd,bus=scsi0.0,drive=drive0","-device","virtio-net,netdev=user.0","-boot","once=d","-vnc","0.0.0.0:59","-drive","if=none,file=local/Win2022_20324.qcow2,id=drive0,cache=writeback,discard=unmap,format=qcow2,detect-zeroes=unmap","-machine","type=q35,accel=kvm"]
         port_map = {
           ssh = 22
         }
