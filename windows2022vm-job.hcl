@@ -25,7 +25,7 @@ job "WindowsWorkload" {
         image_path  = "local/Win2022_20324.qcow2"
         accelerator = "kvm"
         drive_interface = "virtio"
-        args = ["-device","virtio-net,netdev=user.0","-boot","once=d","-vnc","0.0.0.0:59"]
+        args = ["-device","virtio-net","-boot","once=d","-vnc","0.0.0.0:59"]
         port_map = {
           ssh = 22
         }
